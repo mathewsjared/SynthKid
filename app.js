@@ -115,6 +115,11 @@ window.onload = function() {
     debug.exit('window.onresize');
   }
 
+  canvasHTML.addEventListener('click', function(){
+    play[curInd]();
+    curInd = ++curInd % play.length;
+  });
+
   ract.zero.struct.base.html.addEventListener('click',function(){
     ract.clickedButton(0);
 
@@ -285,27 +290,29 @@ function buildSeqOne(notes){
 }
 
 function buildSeqTwo(notes){
-  var seq = new Sequence(4);
+  var seq = new Sequence(5);
 
   seq.addHigh(notes.getCell(3,10), 0, 1);
   seq.addHigh(notes.getCell(3,7), 0, 1);
   seq.addHigh(notes.getCell(3,4), 0, 1);
   seq.addHigh(notes.getCell(3,0), 0, 1);
 
-  seq.addHigh(notes.getCell(3,6), 1, 1);
-  seq.addHigh(notes.getCell(3,3), 1, 1);
-  seq.addHigh(notes.getCell(3,11), 1, 1);
-  seq.addHigh(notes.getCell(3,7), 1, 1);
+  seq.addHigh(notes.getCell(3,5), 1, 1);
+  seq.addHigh(notes.getCell(3,9), 1, 1);
+  seq.addHigh(notes.getCell(3,0), 1, 1);
 
   seq.addHigh(notes.getCell(3,10), 2, 1);
   seq.addHigh(notes.getCell(3,7), 2, 1);
   seq.addHigh(notes.getCell(3,4), 2, 1);
   seq.addHigh(notes.getCell(3,0), 2, 1);
 
-  seq.addHigh(notes.getCell(3,10), 3, 1);
   seq.addHigh(notes.getCell(3,7), 3, 1);
-  seq.addHigh(notes.getCell(3,4), 3, 1);
-  seq.addHigh(notes.getCell(3,0), 3, 1);
+  seq.addHigh(notes.getCell(3,10), 3, 1);
+  seq.addHigh(notes.getCell(3,2), 3, 1);
+
+  seq.addHigh(notes.getCell(3,7), 4, 1);
+  seq.addHigh(notes.getCell(3,4), 4, 1);
+  seq.addHigh(notes.getCell(3,0), 4, 1);
 
   return seq;
 

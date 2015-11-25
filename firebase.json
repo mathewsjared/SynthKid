@@ -1,0 +1,9 @@
+{
+  "firebase": "synthkid",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
